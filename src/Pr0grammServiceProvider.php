@@ -16,7 +16,6 @@ class Pr0grammServiceProvider extends ServiceProvider
             ->give(function () {
                 return Pr0grammApi::class;
             });
-
     }
 
     public function register(): void

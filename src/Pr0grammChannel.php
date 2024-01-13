@@ -3,8 +3,8 @@
 namespace NotificationChannels\Pr0gramm;
 
 use Illuminate\Http\Client\RequestException;
-use NotificationChannels\Pr0gramm\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\Pr0gramm\Exceptions\CouldNotSendNotification;
 use NotificationChannels\Pr0gramm\Exceptions\Pr0grammRateLimitReached;
 use Tschucki\Pr0grammApi\Facades\Pr0grammApi;
 
@@ -13,7 +13,7 @@ class Pr0grammChannel
     public function __construct()
     {
         $loggedIn = Pr0grammApi::loggedIn();
-        if (!$loggedIn['loggedIn']) {
+        if (! $loggedIn['loggedIn']) {
             Pr0grammApi::login(config('services.pr0gramm.username'), config('services.pr0gramm.password'));
         }
     }
@@ -21,25 +21,25 @@ class Pr0grammChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param  mixed  $notifiable
+     * @param  Notification  $notification
      *
-     * @throws \NotificationChannels\Pr0gramm\Exceptions\CouldNotSendNotification
+     * @throws CouldNotSendNotification
      * @throws RequestException
      * @throws Pr0grammRateLimitReached
      */
     public function send(mixed $notifiable, Notification $notification): void
     {
-        if (!method_exists($notification, 'toPr0gramm')) {
+        if (! method_exists($notification, 'toPr0gramm')) {
             throw CouldNotSendNotification::couldNotFindToPr0grammMethod();
         }
-        if (!method_exists($notifiable, 'getPr0grammName')) {
+        if (! method_exists($notifiable, 'getPr0grammName')) {
             throw CouldNotSendNotification::couldNotFindGetPr0grammNameMethod();
         }
 
         $message = $notification->toPr0gramm($notifiable);
 
-        if (!is_string($message)) {
+        if (! is_string($message)) {
             throw CouldNotSendNotification::noStringForMessageProvided();
         }
 
@@ -52,6 +52,5 @@ class Pr0grammChannel
         if ($response->status() === 429) {
             throw Pr0grammRateLimitReached::rateLimitReached();
         }
-
     }
 }
