@@ -1,12 +1,9 @@
 # Pr0gramm Laravel Notifications Channel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/pr0gramm.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pr0gramm)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/tschucki/laravel-notification-channel-pr0gramm.svg?style=flat-square)](https://packagist.org/packages/tschucki/laravel-notification-channel-pr0gramm)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/laravel-notification-channels/pr0gramm/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/pr0gramm)
-[![StyleCI](https://styleci.io/repos/:style_ci_id/shield)](https://styleci.io/repos/:style_ci_id)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/pr0gramm.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pr0gramm)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/pr0gramm/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/pr0gramm/?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/pr0gramm.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/pr0gramm)
+[![StyleCI](https://github.styleci.io/repos/742957955/shield?branch=main)](https://styleci.io/repos/742957955)
+[![Total Downloads](https://img.shields.io/packagist/dt/tschucki/laravel-notification-channel-pr0gramm.svg?style=flat-square)](https://packagist.org/packages/tschucki/laravel-notification-channel-pr0gramm)
 
 This package makes it easy to send notifications to [Pr0gramm](https://pr0gramm.com/) users with Laravel.
 
@@ -27,7 +24,7 @@ This package makes it easy to send notifications to [Pr0gramm](https://pr0gramm.
 You can install the package via composer:
 
 ```bash
-composer require laravel-notification-channels/pr0gramm
+composer require tschucki/laravel-notification-channel-pr0gramm
 ```
 
 Next, you must load the service provider if you don't use auto-discovery:
