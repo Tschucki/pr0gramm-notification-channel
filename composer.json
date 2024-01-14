@@ -1,7 +1,6 @@
 {
-  "name": "laravel-notification-channels/pr0gramm",
+  "name": "tschucki/laravel-notification-channel-pr0gramm",
   "description": "Laravel notification driver for Pr0gramm.",
-  "homepage": "https://github.com/laravel-notification-channels/pr0gramm",
   "license": "MIT",
   "version": "0.0.1",
   "keywords": [
